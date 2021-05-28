@@ -1,0 +1,24 @@
+{
+  "name": "data-structures-javascript",
+  "version": "1.0.0",
+  "description": "My implementations of data structures in javascript",
+  "main": "jest.config.js",
+  "devDependencies": {
+    "jest": "^27.0.1",
+    "ts-jest": "^27.0.1",
+    "typescript": "^4.3.2"
+  },
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulACoroneos/data-structures-javascript.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaulACoroneos/data-structures-javascript/issues"
+  },
+  "homepage": "https://github.com/PaulACoroneos/data-structures-javascript#readme"
+}

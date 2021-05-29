@@ -7,13 +7,13 @@ export class Queue {
   }
 
   enqueue(val: any) {
-      this.queue.unshift(val);
+      this.queue.push(val);
       this.size++;
   }
 
   dequeue() {
       this.size--;
-      return this.queue.pop();
+      return this.queue.shift();
   }
 
   isEmpty() {
@@ -27,6 +27,6 @@ export class Queue {
   }
 
   peek() {
-      return this.queue[this.size - 1];
+      return this.queue[0];
   }
 }

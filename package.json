@@ -1,7 +1,7 @@
 {
-  "name": "data-structures-javascript",
+  "name": "coroneos-data-structures-typescript",
   "version": "1.0.0",
-  "description": "My implementations of data structures in javascript",
+  "description": "My implementations of data structures in TypeScript",
   "main": "jest.config.js",
   "devDependencies": {
     "@types/jest": "^26.0.23",
@@ -22,12 +22,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PaulACoroneos/data-structures-javascript.git"
+    "url": "git+https://github.com/PaulACoroneos/coroneos-typescript-data-structures.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Paul Coroneos",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/PaulACoroneos/data-structures-javascript/issues"
+    "url": "https://github.com/PaulACoroneos/coroneos-typescript-data-structures/issues"
   },
-  "homepage": "https://github.com/PaulACoroneos/data-structures-javascript#readme"
+  "homepage": "https://github.com/PaulACoroneos/coroneos-typescript-data-structures#readme"
 }

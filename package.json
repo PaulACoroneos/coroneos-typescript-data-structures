@@ -24,7 +24,7 @@
     "type": "git",
     "url": "git+https://github.com/PaulACoroneos/coroneos-typescript-data-structures.git"
   },
-  "author": "Paul Coroneos",
+  "author": "Paul Coroneos <paul.coroneos@icloud.com> (https://www.pcoroneos.com/)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/PaulACoroneos/coroneos-typescript-data-structures/issues"

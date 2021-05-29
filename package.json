@@ -22,7 +22,7 @@
     }
   },
   "lint-staged": {
-    "*.ts": "npm runlint:fix"
+    "*.ts": "npm run lint:fix"
   },
   "scripts": {
     "lint": "eslint . --ext .ts",

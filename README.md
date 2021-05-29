@@ -1,2 +1,2 @@
-# data-structures-javascript
-My implementations of data structures in javascript
+# data-structures-typescript
+My implementations of data structures in typescript

@@ -18,11 +18,11 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "test"
+      "pre-push": "npm run test"
     }
   },
   "lint-staged": {
-    "src/**/*.{ts}": "lint:fix"
+    "src/**/*.{ts}": "npm run --silent lint:fix"
   },
   "scripts": {
     "lint": "eslint . --ext .ts",

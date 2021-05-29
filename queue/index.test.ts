@@ -27,4 +27,8 @@ describe("Queue()", () => {
         expect(queue.dequeue()).toBe("hi");
         expect(queue.isEmpty()).toBe(false);
     });
+    it("Check isFull",() => {
+        const queue = new Queue();
+        expect(queue.isFull()).toBe(undefined);
+    });
 });

@@ -21,6 +21,7 @@ describe("Queue()", () => {
     it("Check dequeue",() => {
         const queue = new Queue();
         expect(queue.peek()).toBe(undefined);
+        expect(queue.dequeue()).toBe(undefined);
         queue.enqueue("hi");
         queue.enqueue("hello");
         expect(queue.peek()).toBe("hi");

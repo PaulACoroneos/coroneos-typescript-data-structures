@@ -12,6 +12,8 @@ export class Queue {
   }
 
   dequeue() {
+      if(this.isEmpty())
+          return undefined;
       this.size--;
       return this.queue.shift();
   }

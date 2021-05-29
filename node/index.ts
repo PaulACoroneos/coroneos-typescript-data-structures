@@ -1,8 +1,11 @@
-export type Data = number | null;
- 
 export class Node {
-  data: Data
-  constructor(data: Data = null) {
+  data: number
+  left: Node | null;
+  right: Node | null;
+
+  constructor(data: number) {
       this.data = data;
+      this.left = null;
+      this.right = null;
   }
 }

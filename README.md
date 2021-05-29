@@ -3,6 +3,7 @@ My implementations of data structures in typescript
 
 ## Completed structures
 
+- Node
 - Stack
 - Queue
 
@@ -10,3 +11,4 @@ My implementations of data structures in typescript
 
 - Circular queue
 - Singly linked list
+- Binary Tree

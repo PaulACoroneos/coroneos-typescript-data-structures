@@ -17,12 +17,12 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npx lint-staged",
+      "pre-commit": "lint-staged",
       "pre-push": "npm test"
     }
   },
   "lint-staged": {
-    "*.ts": "lint:fix"
+    "*.ts": "npm runlint:fix"
   },
   "scripts": {
     "lint": "eslint . --ext .ts",

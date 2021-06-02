@@ -36,8 +36,9 @@ export class BinaryTree {
             return arr;
         }
 
+        const stack: Node[] = [];
+
         if (type === "iterative") {
-            const stack: Node[] = [];
             stack.push(node);
 
             while (stack.length) {
@@ -49,7 +50,39 @@ export class BinaryTree {
         }
 
         else {
-            //TODO Recursive
+            //TODO recursively
+        }
+
+        return arr;
+    }
+
+    public inorderTraversal(node: Node | null, type: "recursive" | "iterative") {
+        const arr: Node["data"][] = [];
+
+        if (node == null) {
+            return arr;
+        }
+
+        const stack: Node[] = [];
+
+        if (type === "iterative") {
+            let curr: Node | null = node; 
+            while(stack.length || curr) {
+                //traverse until we find the left most node
+                if(curr) {
+                    stack.push(curr);
+                    curr = curr.left;
+                }
+                //we found left most node. pop,print and move right
+                else {
+                    curr = stack.pop() as Node;
+                    arr.push(curr.data);
+                    curr = curr.right;
+                }
+            }
+        }
+        else {
+        //TODO recursively
         }
 
         return arr;

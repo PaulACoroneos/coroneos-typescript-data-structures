@@ -38,15 +38,21 @@ describe("BinaryTree()",() => {
         expect(binaryTree.preorderTraversal(binaryTree.root,"iterative")).toStrictEqual([5,1,4,8]);
     });
     it.skip("handles preorder traversal recursively", () => {
+        //TODO
+    });
+    it("handles inorder traversal iteratively", () => {
         const binaryTree = new BinaryTree();
-        expect(binaryTree.preorderTraversal(binaryTree.root,"iterative")).toStrictEqual([]);
+        expect(binaryTree.inorderTraversal(binaryTree.root,"iterative")).toStrictEqual([]);
         binaryTree.insert(5);
-        expect(binaryTree.preorderTraversal(binaryTree.root,"iterative")).toStrictEqual([5]);
+        expect(binaryTree.inorderTraversal(binaryTree.root,"iterative")).toStrictEqual([5]);
         binaryTree.insert(1);
-        expect(binaryTree.preorderTraversal(binaryTree.root,"iterative")).toStrictEqual([5,1]);
+        expect(binaryTree.inorderTraversal(binaryTree.root,"iterative")).toStrictEqual([1,5]);
         binaryTree.insert(4);
-        expect(binaryTree.preorderTraversal(binaryTree.root,"iterative")).toStrictEqual([5,1,4]);
+        expect(binaryTree.inorderTraversal(binaryTree.root,"iterative")).toStrictEqual([1,4,5]);
         binaryTree.insert(8);
-        expect(binaryTree.preorderTraversal(binaryTree.root,"iterative")).toStrictEqual([5,1,4,8]);
+        expect(binaryTree.inorderTraversal(binaryTree.root,"iterative")).toStrictEqual([1,4,5,8]);
+    });
+    it.skip("handles inorder traversal recursively", () => {
+        //TODO
     });
 });

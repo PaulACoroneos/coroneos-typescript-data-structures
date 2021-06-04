@@ -92,7 +92,17 @@ export class BinaryTree {
             }
         }
         else {
-            //TODO recursively
+            const recursiveInorder = (node: Node | null, arr: number[] = []) => {
+                if (node == null) return arr;
+
+                if (node.left) recursiveInorder(node.left, arr);
+                arr.push(node.data);
+                if (node.right) recursiveInorder(node.right, arr);
+
+                return arr;
+            };
+
+            return recursiveInorder(node);
         }
 
         return arr;

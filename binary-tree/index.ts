@@ -124,4 +124,27 @@ export class BinaryTree {
             return recursivePostorder(node);
         }
     }
+
+    public levelorderTraversal(node: Node | null) {
+        const arr: number[][] = [];
+        const queue = [];
+        
+        //base case
+        if(node == null) return arr;
+        
+        queue.push(node);
+        while(queue.length) {
+            const size = queue.length;
+            const subArr: number[] = [];
+            for(let i =0; i < size; i++) {
+                const node = queue.shift() as Node;
+                if(node?.left) queue.push(node.left);
+                if(node?.right) queue.push(node.right);
+                subArr.push(node.data);
+            }
+            arr.push(subArr);
+        }
+        
+        return arr;
+    }
 }

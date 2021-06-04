@@ -4,7 +4,6 @@ import { Node } from "../node";
 describe("BinaryTree()",() => {
     it("Binary Tree initializes by default", () => {
         const binaryTree = new BinaryTree();
-        console.log(binaryTree);
         expect(binaryTree.root).toBe(null);
 
         const binaryTree2 = new BinaryTree(new Node(5));
@@ -37,8 +36,17 @@ describe("BinaryTree()",() => {
         binaryTree.insert(8);
         expect(binaryTree.preorderTraversal(binaryTree.root,"iterative")).toStrictEqual([5,1,4,8]);
     });
-    it.skip("handles preorder traversal recursively", () => {
-        //TODO
+    it("handles preorder traversal recursively", () => {
+        const binaryTree = new BinaryTree();
+        expect(binaryTree.preorderTraversal(binaryTree.root,"recursive")).toStrictEqual([]);
+        binaryTree.insert(5);
+        expect(binaryTree.preorderTraversal(binaryTree.root,"recursive")).toStrictEqual([5]);
+        binaryTree.insert(1);
+        expect(binaryTree.preorderTraversal(binaryTree.root,"recursive")).toStrictEqual([5,1]);
+        binaryTree.insert(4);
+        expect(binaryTree.preorderTraversal(binaryTree.root,"recursive")).toStrictEqual([5,1,4]);
+        binaryTree.insert(8);
+        expect(binaryTree.preorderTraversal(binaryTree.root,"recursive")).toStrictEqual([5,1,4,8]);
     });
     it("handles inorder traversal iteratively", () => {
         const binaryTree = new BinaryTree();

@@ -50,7 +50,17 @@ export class BinaryTree {
         }
 
         else {
-            //TODO recursively
+            const recursivePreorder = (node: Node | null, arr: number[] = []) => {
+                //base case. Root is null
+                if (!node) return arr;
+
+                arr.push(node.data);
+                if (node.left) recursivePreorder(node.left, arr);
+                if (node.right) recursivePreorder(node.right, arr);
+                return arr;
+            };
+
+            return recursivePreorder(node);
         }
 
         return arr;
@@ -66,10 +76,10 @@ export class BinaryTree {
         const stack: Node[] = [];
 
         if (type === "iterative") {
-            let curr: Node | null = node; 
-            while(stack.length || curr) {
+            let curr: Node | null = node;
+            while (stack.length || curr) {
                 //traverse until we find the left most node
-                if(curr) {
+                if (curr) {
                     stack.push(curr);
                     curr = curr.left;
                 }
@@ -82,7 +92,7 @@ export class BinaryTree {
             }
         }
         else {
-        //TODO recursively
+            //TODO recursively
         }
 
         return arr;

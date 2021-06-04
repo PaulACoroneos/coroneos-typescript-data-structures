@@ -72,4 +72,19 @@ describe("BinaryTree()",() => {
         binaryTree.insert(8);
         expect(binaryTree.inorderTraversal(binaryTree.root,"recursive")).toStrictEqual([1,4,5,8]);
     });
+    it.skip("handles inorder traversal iteratively", () => {
+        //TODO
+    });
+    it("handles postorder traversal recursively", () => {
+        const binaryTree = new BinaryTree();
+        expect(binaryTree.postorderTraversal(binaryTree.root,"recursive")).toStrictEqual([]);
+        binaryTree.insert(5);
+        expect(binaryTree.postorderTraversal(binaryTree.root,"recursive")).toStrictEqual([5]);
+        binaryTree.insert(1);
+        expect(binaryTree.postorderTraversal(binaryTree.root,"recursive")).toStrictEqual([1,5]);
+        binaryTree.insert(4);
+        expect(binaryTree.postorderTraversal(binaryTree.root,"recursive")).toStrictEqual([4,1,5]);
+        binaryTree.insert(8);
+        expect(binaryTree.postorderTraversal(binaryTree.root,"recursive")).toStrictEqual([4,1,8,5]);
+    });
 });

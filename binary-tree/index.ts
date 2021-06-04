@@ -107,4 +107,21 @@ export class BinaryTree {
 
         return arr;
     }
+
+    public postorderTraversal(node: Node | null, type: "iterative" | "recursive") {
+        if (type === "iterative") {
+            //TODO implement
+        }
+        else {
+            const recursivePostorder = (node: Node | null, arr: number[] = []) => {
+                if (node == null) return arr;
+
+                if (node.left) recursivePostorder(node.left, arr);
+                if (node.right) recursivePostorder(node.right, arr);
+                arr.push(node.data);
+                return arr;
+            };
+            return recursivePostorder(node);
+        }
+    }
 }

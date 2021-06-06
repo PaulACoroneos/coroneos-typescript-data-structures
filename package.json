@@ -1,6 +1,6 @@
 {
   "name": "coroneos-data-structures-typescript",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "My implementations of data structures in TypeScript",
   "main": "jest.config.js",
   "devDependencies": {

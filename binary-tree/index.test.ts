@@ -115,4 +115,18 @@ describe("BinaryTree()",() => {
         binaryTree.insert(7);
         expect(binaryTree.maxDepth(binaryTree.root)).toBe(4);
     });
+    it("handles isSymmetric()", () => {
+        const binaryTree = new BinaryTree();
+        expect(binaryTree.isSymmetric(binaryTree.root)).toBe(true);
+        binaryTree.insert(1);
+        expect(binaryTree.isSymmetric(binaryTree.root)).toBe(true);
+        binaryTree.insert(5);
+        expect(binaryTree.isSymmetric(binaryTree.root)).toBe(false);
+        (binaryTree.root as Node).left = new Node(5);
+        expect(binaryTree.isSymmetric(binaryTree.root)).toBe(true);
+        ((binaryTree.root as Node).left as Node).left = new Node(6);
+        ((binaryTree.root as Node).right as Node).left = new Node(6);
+        expect(binaryTree.isSymmetric(binaryTree.root)).toBe(false);
+
+    });
 });

@@ -129,32 +129,49 @@ export class BinaryTree {
     public levelorderTraversal(node: Node | null): number[][] {
         const arr: number[][] = [];
         const queue = [];
-        
+
         //base case
-        if(node == null) return arr;
-        
+        if (node == null) return arr;
+
         queue.push(node);
-        while(queue.length) {
+        while (queue.length) {
             const size = queue.length;
             const subArr: number[] = [];
-            for(let i =0; i < size; i++) {
+            for (let i = 0; i < size; i++) {
                 const node = queue.shift() as Node;
-                if(node?.left) queue.push(node.left);
-                if(node?.right) queue.push(node.right);
+                if (node?.left) queue.push(node.left);
+                if (node?.right) queue.push(node.right);
                 subArr.push(node.data);
             }
             arr.push(subArr);
         }
-        
+
         return arr;
     }
 
-    public maxDepth(node: Node | null, method: "bfs" | "dfs"= "dfs"): number {
-        if(node == null) return 0;
+    public maxDepth(node: Node | null, method: "bfs" | "dfs" = "dfs"): number {
+        if (node == null) return 0;
 
-        const leftHeight = this.maxDepth(node.left,method);
-        const rightHeight = this.maxDepth(node.right,method);
-        
-        return Math.max(leftHeight,rightHeight) +1;
+        const leftHeight = this.maxDepth(node.left, method);
+        const rightHeight = this.maxDepth(node.right, method);
+
+        return Math.max(leftHeight, rightHeight) + 1;
+    }
+
+    public isSymmetric(root: Node | null): boolean {
+
+        const isMirror = (nodeA?: Node | null, nodeB?: Node | null): boolean => {
+            //check if we reached end of route
+            if (nodeA == null && nodeB == null) return true;
+
+            //otherwise recurse if values are same at corresponding points of tree
+            if (nodeA?.data === nodeB?.data) {
+                return isMirror(nodeA?.left, nodeB?.right) && isMirror(nodeA?.right, nodeB?.left);
+            }
+            //else we found a mismatch
+            return false;
+        };
+
+        return isMirror(root, root);
     }
 }

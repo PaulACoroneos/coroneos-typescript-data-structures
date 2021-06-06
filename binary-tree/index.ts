@@ -7,7 +7,7 @@ export class BinaryTree {
         this.root = root;
     }
 
-    public insert(val: number) {
+    public insert(val: number): void {
         const insertFn = (node: Node | null, val: number) => {
             //Scenario 1: Base case root is null
             if (node == null) {
@@ -29,7 +29,7 @@ export class BinaryTree {
         this.root = insertFn(this.root, val);
     }
 
-    public preorderTraversal(node: Node | null, type: "recursive" | "iterative") {
+    public preorderTraversal(node: Node | null, type: "recursive" | "iterative"): number[] {
         const arr: Node["data"][] = [];
 
         if (node == null) {
@@ -66,7 +66,7 @@ export class BinaryTree {
         return arr;
     }
 
-    public inorderTraversal(node: Node | null, type: "recursive" | "iterative") {
+    public inorderTraversal(node: Node | null, type: "recursive" | "iterative"): number[] {
         const arr: Node["data"][] = [];
 
         if (node == null) {
@@ -108,9 +108,10 @@ export class BinaryTree {
         return arr;
     }
 
-    public postorderTraversal(node: Node | null, type: "iterative" | "recursive") {
+    public postorderTraversal(node: Node | null, type: "iterative" | "recursive"): number[] {
         if (type === "iterative") {
             //TODO implement
+            return [];
         }
         else {
             const recursivePostorder = (node: Node | null, arr: number[] = []) => {
@@ -125,7 +126,7 @@ export class BinaryTree {
         }
     }
 
-    public levelorderTraversal(node: Node | null) {
+    public levelorderTraversal(node: Node | null): number[][] {
         const arr: number[][] = [];
         const queue = [];
         
@@ -146,5 +147,14 @@ export class BinaryTree {
         }
         
         return arr;
+    }
+
+    public maxDepth(node: Node | null, method: "bfs" | "dfs"= "dfs"): number {
+        if(node == null) return 0;
+
+        const leftHeight = this.maxDepth(node.left,method);
+        const rightHeight = this.maxDepth(node.right,method);
+        
+        return Math.max(leftHeight,rightHeight) +1;
     }
 }

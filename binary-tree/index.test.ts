@@ -99,4 +99,20 @@ describe("BinaryTree()",() => {
         binaryTree.insert(8);
         expect(binaryTree.levelorderTraversal(binaryTree.root)).toStrictEqual([[5],[1,8],[4]]);
     });
+    it("handles maxdepth() dfs", () => {
+        const binaryTree = new BinaryTree();
+        expect(binaryTree.maxDepth(binaryTree.root)).toBe(0);
+        binaryTree.insert(1);
+        expect(binaryTree.maxDepth(binaryTree.root)).toBe(1);
+        binaryTree.insert(5);
+        expect(binaryTree.maxDepth(binaryTree.root)).toBe(2);
+        binaryTree.insert(2);
+        expect(binaryTree.maxDepth(binaryTree.root)).toBe(3);
+        binaryTree.insert(3);
+        expect(binaryTree.maxDepth(binaryTree.root)).toBe(4);
+        binaryTree.insert(6);
+        expect(binaryTree.maxDepth(binaryTree.root)).toBe(4);
+        binaryTree.insert(7);
+        expect(binaryTree.maxDepth(binaryTree.root)).toBe(4);
+    });
 });

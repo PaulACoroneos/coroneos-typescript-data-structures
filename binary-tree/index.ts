@@ -174,4 +174,14 @@ export class BinaryTree {
 
         return isMirror(root, root);
     }
+    public hasPathSum(root: Node | null, targetSum: number, sumSoFar = 0): boolean {
+        if (root == null) return false;
+
+        sumSoFar += root.data;
+        if (root.left == null && root.right == null) {
+            return sumSoFar === targetSum;
+        }
+
+        return this.hasPathSum(root.left, targetSum, sumSoFar) || this.hasPathSum(root.right, targetSum, sumSoFar);
+    }
 }

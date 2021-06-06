@@ -127,6 +127,15 @@ describe("BinaryTree()",() => {
         ((binaryTree.root as Node).left as Node).left = new Node(6);
         ((binaryTree.root as Node).right as Node).left = new Node(6);
         expect(binaryTree.isSymmetric(binaryTree.root)).toBe(false);
-
+    });
+    it("handles haspathSum()", () => {
+        const binaryTree = new BinaryTree();
+        expect(binaryTree.hasPathSum(binaryTree.root,10)).toBe(false);
+        binaryTree.insert(1);
+        expect(binaryTree.hasPathSum(binaryTree.root,10)).toBe(false);
+        binaryTree.insert(9);
+        expect(binaryTree.hasPathSum(binaryTree.root,10)).toBe(true);
+        binaryTree.insert(11);
+        expect(binaryTree.hasPathSum(binaryTree.root,10)).toBe(false);
     });
 });
